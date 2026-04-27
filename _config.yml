@@ -1,6 +1,6 @@
 title: Lisa's Journal
 description: This is my journal.
-baseurl: ""
+baseurl: "https://melissando.github.io/blog/"
 url: ""
 markdown: kramdown
 permalink: pretty
