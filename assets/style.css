@@ -1,0 +1,204 @@
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --border: #eeeeee;
+  --link: #000000;
+}
+
+html.dark-mode {
+  --bg: #121212;
+  --text: #e6e6e6;
+  --muted: #aaaaaa;
+  --border: #2a2a2a;
+  --link: #ffffff;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 20px;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+a, .site-footer, .theme-toggle {
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.post-content a {
+  color: #1a4fb3; /* slightly muted blue */
+  text-decoration: none;
+}
+
+.post-content a:hover {
+  text-decoration: underline;
+}
+
+html.dark-mode .post-content a {
+  color: #8ab4f8; /* soft desaturated blue */
+}
+
+footer a {
+  color: #1a4fb3; /* slightly muted blue */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+html.dark-mode footer a {
+  color: #8ab4f8; /* soft desaturated blue */
+}
+
+.copy-email {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0;
+}
+
+.copy-email:hover {
+    color: var(--text);
+    text-decoration: underline;
+}
+
+.site-header {
+  margin-bottom: 50px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.site-header a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+.site-description {
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.post-title {
+  margin-bottom: 10px;
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 10px;
+}
+
+.post-list a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Minimal text toggle */
+.theme-toggle {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.7;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  text-decoration: underline;
+  opacity: 1;
+}
+
+/* Shared base look */
+code, pre {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+
+/* Inline code */
+code {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 6px;
+  font-size: 0.9em;
+}
+
+/* Block code */
+pre {
+  background: rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+/* Remove duplicate styling inside blocks */
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+
+html.dark-mode code,
+html.dark-mode pre {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+html.dark-mode code {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+html.dark-mode pre {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.post-response {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.post-content img {
+  display: block;
+  margin: 5vh auto;
+  max-width: 80%;
+  height: auto;
+}

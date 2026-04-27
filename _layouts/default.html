@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/icons/disk.png">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/assets/icons/disk.png">
+  <script>
+  (function () {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark-mode");
+    }
+  })();
+</script>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css?v=9">
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+      const isExternal =
+        link.hostname &&
+        link.hostname !== window.location.hostname;
+
+      if (isExternal) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+  });
+</script>
+<body>
+  <header class="site-header">
+    <h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+    <p class="site-description">{{ site.description }}</p>
+  </header>
+
+  <main class="content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <p>
+        © {{ site.time | date: "%Y" }} {{ site.title }}
+        • <a href="{{ site.baseurl }}/feed.xml">RSS</a>
+        • <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
+    </p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        document.querySelector(".theme-toggle").textContent = isDark ? "Light" : "Dark";
+    });
+
+  function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = root.classList.toggle("dark-mode");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    document.querySelector(".theme-toggle").textContent = isDark ? "Light" : "Dark";
+  }
+</script>
+</body>
+</html>

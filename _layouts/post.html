@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <p class="post-response">
+    Responses welcome:
+    <button id="copy-email" class="copy-email">Copy Email</button>
+  </p>
+</article>
+<script src="{{ site.baseurl }}/scripts/email.js?v=2"></script>
